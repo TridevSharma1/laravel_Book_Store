@@ -15,7 +15,7 @@ class ProductController extends Controller
     }
     public function product_store_form()
     {
-        
+
         return view('product_store');
     }
     public function product_store(Request $request)
@@ -121,7 +121,7 @@ class ProductController extends Controller
     //     return redirect()->back()->with('success', 'Product added successfully!');
     // }
 
-    
+
     //First we created variable and assined all data of any model
     //Then We Have to view over blade file in the written prodect list is my HTML blade file and pass the varible in the view
 
