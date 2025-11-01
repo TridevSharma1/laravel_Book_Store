@@ -45,6 +45,22 @@ class ProductController extends Controller
         // Redirect with message
         return redirect()->back()->with('success', 'Product added successfully!');
     }
+    public function SoftDeleteproduct($id)
+    {
+        $product = Product::findOrFail($id);
+        $product->delete(); // This will perform soft delete
+        return redirect()->back()->with('success', 'Product deleted successfully!');
+    }
+    // Show edit form
+public function productedit($id)
+{
+    $product = Product::findOrFail($id);
+    return view('product_edit', compact('product'));
+}
+
+// Handle update request
+
+
     // public function product_store(Request $request)
     // {
     //     // Create validator instance
