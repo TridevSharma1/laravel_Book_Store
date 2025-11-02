@@ -6,10 +6,14 @@ use App\Http\Controllers\ProductController;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/product-list', [ProductController::class, 'product_list']);
+Route::get('/product-list', [ProductController::class, 'product_list'])->name('product.list');
 // Route::post('/product-store', [ProductController::class, 'product_store']);
-Route::get('/product-store-form', [ProductController::class, 'product_store_form']);
+Route::get('/product-store-form', [ProductController::class, 'product_store_form'])->name('product.store.form');
 Route::post('/product-store', [ProductController::class, 'product_store'])->name('product.store');
+Route::delete('/product/{id}', [ProductController::class, 'SoftDeleteproduct'])->name('product.destroy');
+Route::get('/product/{id}/edit', [ProductController::class, 'productedit'])->name('product.edit');
+Route::put('/product/{id}', [ProductController::class, 'productupdate'])->name('product.update');
+
 
 
 // There are 4 parts in URL
