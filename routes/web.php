@@ -13,6 +13,7 @@ Route::post('/product-store', [ProductController::class, 'product_store'])->name
 Route::delete('/product/{id}', [ProductController::class, 'SoftDeleteproduct'])->name('product.destroy');
 Route::get('/product/{id}/edit', [ProductController::class, 'productedit'])->name('product.edit');
 Route::put('/product/{id}', [ProductController::class, 'productupdate'])->name('product.update');
+Route::get('/product-home', [ProductController::class, 'producthome'])->name('product.home');
 
 
 
