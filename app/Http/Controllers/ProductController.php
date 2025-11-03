@@ -57,6 +57,18 @@ public function productedit($id)
     $product = Product::findOrFail($id);
     return view('product_edit', compact('product'));
 }
+//  public function producthome()
+//     {
+//         $products = Product::all();// Only active products
+//         return view('product_home');
+//     }
+public function producthome()
+{
+    $products = Product::all(); // ✅ fetch all products
+    return view('product_home', compact('products')); // ✅ plural name matches variable
+}
+
+
 
 // Handle update request
 
