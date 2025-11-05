@@ -68,6 +68,19 @@ public function producthome()
     return view('product_home', compact('products')); // ✅ plural name matches variable
 }
 
+public function productview($id)
+{
+    $product = Product::findOrFail($id);
+
+    // 🧩 Get other products except the one being viewed
+    $otherProducts = Product::where('id', '!=', $id)
+        ->inRandomOrder()  // Shuffle results
+        ->take(4)           // Limit to 4 items
+        ->get();
+
+    return view('product_view', compact('product', 'otherProducts'));
+}
+
 
 
 // Handle update request
