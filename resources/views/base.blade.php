@@ -16,7 +16,7 @@
     <!-- 🔹 Navbar Section -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="{{ url('/') }}">MyShop</a>
+            <a class="navbar-brand fw-bold" href="{{ route('product.home')}}">MyShop</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -26,7 +26,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link {{ Request::is('/') ? 'active' : '' }}" href="{{ url('/') }}">Home</a>
+                        <a class="nav-link {{ Request::is('/') ? 'active' : '' }}" href="{{ route('product.home')}}">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link {{ Request::is('product') ? 'active' : '' }}" href="{{ route('product.list')}}">Products</a>
@@ -43,6 +43,13 @@
     <div class="container py-4">
         @yield('content')
     </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-4">
+        <div class="container">
+            <p class="mb-0">© 2025 MyShop. All rights reserved.</p>
+        </div>
+    </footer>
 
     <!-- 🔹 Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
