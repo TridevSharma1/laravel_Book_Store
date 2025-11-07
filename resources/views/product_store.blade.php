@@ -1,16 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('base')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Product</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
+@section('title', 'Product form')
 
-<body class="bg-light">
+@section('content')
+
 
     <div class="container mt-5">
+        <a class="btn btn-info" href="{{ route('product.list') }}">Back to product list</a>
         <div class="card shadow-lg p-4">
             <h2 class="mb-4 text-center text-primary">Add New Product</h2>
 
@@ -64,7 +60,4 @@
             </form>
         </div>
     </div>
-
-</body>
-
-</html>
+@endsection
