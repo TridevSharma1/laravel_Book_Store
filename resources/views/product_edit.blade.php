@@ -1,16 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
+<!-- resources/views/edit.blade.php -->
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product List</title>
+@extends('base')
 
-    <!-- Bootstrap CDN for styling -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
+@section('title', 'Edit Product')
 
-<body class="bg-light">
+@section('content')
+    <h2 class="mb-4">Edit Product</h2>
 
     <form action="{{ route('product.update', $product->id) }}" method="POST" enctype="multipart/form-data">
         @csrf
@@ -24,7 +19,7 @@
         <div class="mb-3">
             <label>Product Image</label><br>
             @if($product->product_image)
-            <img src="{{ asset('storage/' . $product->product_image) }}" alt="Product Image" width="100"><br><br>
+                <img src="{{ asset('storage/' . $product->product_image) }}" alt="Product Image" width="100"><br><br>
             @endif
             <input type="file" name="product_image" class="form-control">
         </div>
@@ -41,6 +36,4 @@
 
         <button type="submit" class="btn btn-primary">Update Product</button>
     </form>
-</body>
-
-</html>
+@endsection
