@@ -8,7 +8,7 @@
     <div class="container mt-5">
         <a class="btn btn-info" href="{{ route('product.list') }}">Back to product list</a>
         <div class="card shadow-lg p-4">
-            <h2 class="mb-4 text-center text-primary">Add New Product</h2>
+            <h2 class="mb-4 text-center text-primary">Add A New Product</h2>
 
             {{-- Success message --}}
             @if(session('success'))
