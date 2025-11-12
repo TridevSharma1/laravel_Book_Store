@@ -5,6 +5,20 @@
 @section('content')
 <section class="py-5 bg-light">
 
+    {{-- ✅ Top Bar with Login & Signup --}}
+    <div class="container mb-4 text-end">
+        @auth
+            <span class="me-3">Welcome, <strong>{{ Auth::user()->name }}</strong></span>
+            <form action="{{ route('logout') }}" method="POST" class="d-inline">
+                @csrf
+                <button class="btn btn-danger btn-sm">Logout</button>
+            </form>
+        @else
+            <a href="" class="btn btn-outline-primary btn-sm me-2">Login</a>
+            <a href="" class="btn btn-primary btn-sm">Sign Up</a>
+        @endauth
+    </div>
+
     {{-- ✅ Product Cards --}}
     <div class="container">
         <h2 class="text-center mb-4 fw-bold">My Shop Products</h2>
@@ -53,6 +67,7 @@
             </div>
             @endif
 
+            {{-- ✅ Product Cards Loop --}}
             @foreach($products as $tridev)
             <div class="col-md-4">
                 <div class="card shadow-sm border-0 h-100">
