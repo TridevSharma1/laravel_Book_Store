@@ -3,9 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', function () {return view('welcome');});
 Route::get('/product-list', [ProductController::class, 'product_list'])->name('product.list');
 Route::get('/product-store-form', [ProductController::class, 'product_store_form'])->name('product.store.form');
 Route::post('/product-store', [ProductController::class, 'product_store'])->name('product.store');
