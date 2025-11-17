@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\StudentController;
 
 Route::get('/', function () {return view('welcome');});
 Route::get('/product-list', [ProductController::class, 'product_list'])->name('product.list');
@@ -12,6 +13,10 @@ Route::get('/product/{id}/edit', [ProductController::class, 'productedit'])->nam
 Route::put('/product/{id}', [ProductController::class, 'productupdate'])->name('product.update');
 Route::get('/product-home', [ProductController::class, 'producthome'])->name('product.home');
 Route::get('/product/{id}', [ProductController::class, 'productView'])->name('product.view');
+Route::get('/students', [StudentController::class, 'studentlist'])->name('student.list');
+Route::get('/students/create', [StudentController::class, 'studentcreateform'])->name('student.create');
+Route::post('/students/store', [StudentController::class, 'studentstore'])->name('student.store');
+
 
 
 // There are 4 parts in URL
