@@ -47,6 +47,7 @@
             @endforeach
         </tbody>
     </table>
+    <a class="btn btn-info" href="{#}">Back to product list</a>
 </div>
 
 @endsection
