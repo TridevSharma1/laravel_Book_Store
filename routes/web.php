@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\BookIssueController;
 
 Route::get('/', function () {return view('welcome');});
 Route::get('/product-list', [ProductController::class, 'product_list'])->name('product.list');
@@ -16,6 +17,9 @@ Route::get('/product/{id}', [ProductController::class, 'productView'])->name('pr
 Route::get('/students', [StudentController::class, 'studentlist'])->name('student.list');
 Route::get('/students/create', [StudentController::class, 'studentcreateform'])->name('student.create');
 Route::post('/students/store', [StudentController::class, 'studentstore'])->name('student.store');
+Route::get('/bookissue/create', [BookIssueController::class, 'create'])->name('bookissue.create');
+Route::post('/bookissue/store', [BookIssueController::class, 'store'])->name('bookissue.store');
+Route::get('/bookissue', [BookIssueController::class, 'index'])->name('bookissue.index');
 
 
 
