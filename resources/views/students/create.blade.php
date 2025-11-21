@@ -5,6 +5,23 @@
 @section('content')
 <div class="card shadow p-4">
     <h3 class="mb-4">Add New Student</h3>
+    @if(session('success'))
+    <div class="alert alert-success alert-dismissible fade show">
+        {{ session('success') }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    </div>
+    @endif
+
+    @if ($errors->any())
+    <div class="alert alert-danger">
+        <strong>Error!</strong> Please fix the issues below:
+        <ul class="mt-2 mb-0">
+            @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+    @endif
 
     <form action="{{ route('student.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
